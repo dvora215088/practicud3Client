@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiUrl = 'http://localhost:5151';
+const apiUrl =process.env.REACT_APP_BASE_URL;
 axios.defaults.baseURL = apiUrl;
 
 
@@ -36,6 +36,6 @@ export default {
   deleteTask: async(id) => {
     console.log('deleteTask');
     const response = await axios.delete(`/items/${id}`);
-    return response.data; // החזרת נתוני התגובה במקרה של הצלחה
+    return response.data; 
   }
 };
